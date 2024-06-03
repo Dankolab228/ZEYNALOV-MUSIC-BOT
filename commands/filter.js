@@ -62,7 +62,7 @@ module.exports = {
     interaction.reply({ embeds: [embed], components: [buttons, buttons2] }).then(async Message => {
 
       const filter = i => i.user.id === interaction?.user?.id
-      let col = await Message?.createMessageComponentCollector({ filter, time: 60000 });
+      let col = await Message?.createMessageComponentCollector({ filter, time: 600000 });
 
       col.on('collect', async (button) => {
         if (button?.user?.id !== interaction?.user?.id) return
